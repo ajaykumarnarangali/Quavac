@@ -22,7 +22,8 @@ function Header() {
 
             <div className='flex flex-col gap-2'>
 
-                <div className='text-subHeadLogo font-light bg-subHeadColor flex justify-between items-center p-1 px-8'>
+                <div className='text-subHeadLogo font-light bg-subHeadColor flex justify-between items-center p-1 px-1 
+                md:px-8 overflow-x-scroll gap-2 md:gap-0'>
                     <div className='flex items-center gap-5'>
                         <div>
                             <i className="fa-solid fa-house"></i>
@@ -32,7 +33,7 @@ function Header() {
                             <label className='text-xs font-medium'>Monitoring</label>
                         </div>
                         <div className='flex gap-1'>
-                            <i class="fa-solid fa-bell"></i>
+                            <i className="fa-solid fa-bell"></i>
                             <label className='text-xs font-medium'>Alarms</label>
                         </div>
                         <div className='flex gap-1'>
@@ -72,7 +73,7 @@ function Header() {
                     </div>
                     <div>
                         <span className='text-white text-3xl'>
-                            <i class="fa-solid fa-gauge-simple-high"></i>
+                            <i className="fa-solid fa-gauge-simple-high"></i>
                         </span>
                     </div>
                 </div>
