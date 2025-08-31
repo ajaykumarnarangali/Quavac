@@ -1,6 +1,28 @@
+import { useState } from 'react'
 import Logo from '/Quavac_1.png'
+import { useUser } from '../context/UserContext'
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+    const [showMenu, setShowMenu] = useState(false);
+    const { setCurrentuser } = useUser();
+    const navigate = useNavigate();
+
+    const handleShowMenu = () => {
+        setShowMenu(prev => !prev);
+    }
+
+    const handleLogout = () => {
+        setCurrentuser(null);
+        localStorage.removeItem('user');
+        navigate('/');
+    }
+
+    const handlePrefernce = () => {
+        navigate('/preference');
+    }
+
     return (
         <div>
             <div className='bg-headColor w-full flex justify-between items-center'>
@@ -11,8 +33,28 @@ function Header() {
                     <span className='cursor-pointer'>
                         <i className="fa-solid fa-circle-question"></i>
                     </span>
-                    <span className='cursor-pointer'>
-                        <i className="fa-solid fa-user"></i>
+                    <span className='cursor-pointer relative'>
+                        <i className="fa-solid fa-user" onClick={handleShowMenu}></i>
+                        {showMenu &&
+                            <div className='absolute w-32 h-16 bg-subHeadColor shadow-md right-0 top-8 text-sm'>
+                                <div className='flex gap-2 items-center justify-start px-2 h-1/2
+                            hover:bg-slate-700 border-b border-b-gray-600'
+                                    onClick={handlePrefernce}>
+                                    <span>
+                                        <i className="fa-solid fa-sliders"></i>
+                                    </span>
+                                    Preference
+                                </div>
+                                <div className='flex gap-2 items-center justify-start px-2 h-1/2
+                            hover:bg-slate-700'
+                                    onClick={handleLogout}>
+                                    <span>
+                                        <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                                    </span>
+                                    Logout
+                                </div>
+                            </div>
+                        }
                     </span>
                     <span className='cursor-pointer'>
                         <i className="fa-solid fa-bars"></i>
