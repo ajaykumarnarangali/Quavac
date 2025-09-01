@@ -13,7 +13,7 @@ function Map() {
     const fetchLocation = async () => {
       const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/locations`);
       const data = await res.json();
-      console.log(res);
+      console.log(data);
       setCenter({ lat: data?.location?.lat, lng: data.location.lng });
     };
 
@@ -32,7 +32,7 @@ function Map() {
     <div className='px-4 py-6'>
 
       <div className="w-full lg:h-screen flex flex-col lg:flex-row gap-7">
-        <div className="bg-fuchsia-500 w-full lg:w-[70%]">
+        <div className="w-full lg:w-[70%]">
           <div className="w-full h-14 bg-subHeadColor flex items-center px-4">
             <div className="text-white flex gap-1 items-center">
               <h1 className="text-xs font-medium">Area</h1>

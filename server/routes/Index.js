@@ -4,5 +4,6 @@ const indexController = require('../controllers/index');
 
 
 router.get('/locations', indexController.getLocation);
+router.get('/wave-data', indexController.generateWaveData);
 
 module.exports = router;
