@@ -54,9 +54,9 @@ function LineChartComp() {
                                 padding:'2px'
                             }}
                         />
-                        <Line type="monotone" dataKey="FStella3313" stroke='#dc5859' dot={false} />
-                        <Line type="monotone" dataKey="FStella2630" stroke='#85d675' dot={false} />
-                        <Line type="monotone" dataKey="VacStation" stroke='#2f8d8c' dot={false} />
+                        <Line type="monotone" dataKey="FStella3313" stroke='#dc5859' dot={false} name='F-Stella Ave 3313' />
+                        <Line type="monotone" dataKey="FStella2630" stroke='#85d675' dot={false} name='F-Stella Ave 2630' />
+                        <Line type="monotone" dataKey="VacStation" stroke='#2f8d8c' dot={false} name='Vac station' />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
